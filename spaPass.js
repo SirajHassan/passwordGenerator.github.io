@@ -85,6 +85,10 @@ function balancedWord(word){
 // input dictionary of keys/valus
 // returns string version.
 
+function subLetters2(words,dic){
+
+
+
 function subLetters(word,dic){
 
   // if single letter
@@ -154,7 +158,7 @@ function getWords(minWL,maxWL,easyTyping,numSub,words){
     }
     if(easyTyping == true ){
       if(balancedWord(words[i]) == false){
-        alert('hi')
+        // alert('hi')
         continue;
       }
     }
