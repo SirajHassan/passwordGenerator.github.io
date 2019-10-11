@@ -1,0 +1,64 @@
+
+<!--
+https://canvas.umn.edu/courses/134934/assignments/802542
+We will need 3 forms for lengths and 2 boxes..  -->
+
+<!DOCTYPE html>
+
+
+<html>
+  <title>
+    XKCD Password Generator
+  </title>
+
+  <body>
+    <center>
+    <h1>
+      XKCD Password Generator
+    </h1>
+    </center>
+
+
+        <!-- inputs -->
+    <div class = "inputs">
+       <label for="MinWL">Minimum Word Length:</label>
+       <input type="text" id="MinWL"  /> <br>
+       <label for="MaxWL">Maximum Word Length:</label>
+       <input type="text" id="MaxWL"  /><br>
+       <label for="MaxLength">Maximum Length:</label>
+       <input type="text" id="MaxLength"  /><br>
+
+       <!-- checkboxes -->
+       <label for="EasyTyping">Easy Typing:</label>
+       <input type="checkbox" id="EasyTyping" ><br>
+       <label for="NumSub">Number of Subsitutions:</label>
+       <input type="checkbox" id="NumSub" ><br>
+
+
+       <!-- submit button -->
+       <button id = "submit" onclick="submit()">Submit</button>
+    </div>
+
+    <div class = "tables" style = inline >
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Passwords</td>
+            <td>Size</td>
+          </tr>
+          <tr>
+            <td><div id="wordTable">Table:</div></td>
+            <td><div id="sizeTable">Table:</div></td>
+          </tr>
+      </tbody>
+      </table>
+
+    </div>
+
+
+  <script type="text/javascript" src='./spaPass.js'>
+
+  </script>
+  </body>
+</html>
