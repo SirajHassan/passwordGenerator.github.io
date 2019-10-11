@@ -24,12 +24,28 @@ function displayText(words) {
 
 function getInputs(){
     // get current values
-    var minWL = document.getElementById('MinWL').value;
-    var maxWL = document.getElementById('MaxWL').value;
-    var maxLength = document.getElementById('MaxLength').value;
-    //bools
-    var easyTyping = document.getElementById('EasyTyping').checked;
-    var numSub = document.getElementById('NumSub').checked;
+
+      var minWL = document.getElementById('MinWL').value;
+      var maxWL = document.getElementById('MaxWL').value;
+      var maxLength = document.getElementById('MaxLength').value;
+      //bools
+      var easyTyping = document.getElementById('EasyTyping').checked;
+      var numSub = document.getElementById('NumSub').checked;
+
+      if (MinWL < 0 || MaxWL < 0 || maxLength < 0){
+        alert('please do not put negative numbers');
+        return -1;
+      }
+      // if (MinWL >= MaxWL ){
+      //   alert('Min must be less than max');
+      //   return -1;
+      // }
+      // else if ( (typeof(MinWL) != "number") || (typeof(MaxWL) != "number") || (typeof(maxLength) != "number") ){
+      //   alert('numbers only');
+      //   continue;
+      // }
+
+
 
     // alert(numSub);
     // alert(easyTyping);
@@ -47,7 +63,6 @@ function getInputs(){
 
      arr = process(minWL,maxWL,maxLength,easyTyping,numSub,words);
      return arr;
-
 
   }
 
@@ -282,10 +297,13 @@ function submit(){
   sizeTable = [];
   words = wordsCopy.slice();
   var arr = getInputs();
+  if (arr == -1){
+    return; //error in inputs
+  }
   //alert(arr);
   GenerateTable(arr,'wordTable');
   GenerateTable(sizeTable,'sizeTable')
-  //cleanTable();
+  cleanTable();
 
 }
 
@@ -336,10 +354,10 @@ function GenerateTable(words,id) {
 
 
 // function cleanTable(){
-//   var table = document.getElementById("mytab1");
-//   for (var i = 0, row; row = table.rows[i]; i++) {
+//   var table = document.getElementById("wordTable");
+//   for (var i = 1, row; row = table.rows[i]; i++) {
 //      for (var j = 0, col; col = row.cells[j]; j++) {
-//
+//        alert(table.rows[i].cells[j].value);
 //      }
 //    }
 // }
