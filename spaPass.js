@@ -32,17 +32,17 @@ function getInputs(){
       var easyTyping = document.getElementById('EasyTyping').checked;
       var numSub = document.getElementById('NumSub').checked;
 
-      if (MinWL < 0 || MaxWL < 0 || maxLength < 0){
+      if (minWL < 0 || maxWL < 0 || maxLength < 0){
         alert('please do not put negative numbers');
         return -1;
       }
-      // if (MinWL >= MaxWL ){
-      //   alert('Min must be less than max');
-      //   return -1;
-      // }
-      // else if ( (typeof(MinWL) != "number") || (typeof(MaxWL) != "number") || (typeof(maxLength) != "number") ){
+      if (minWL >= maxWL ){
+        alert('Min must be less than max');
+        return -1;
+      }
+      // if ( (typeof(minWL) != "number") || (typeof(maxWL) != "number") || (typeof(maxLength) != "number") ){
       //   alert('numbers only');
-      //   continue;
+      //   return -1;
       // }
 
 
