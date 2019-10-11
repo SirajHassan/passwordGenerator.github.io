@@ -303,7 +303,7 @@ function submit(){
   //alert(arr);
   GenerateTable(arr,'wordTable');
   GenerateTable(sizeTable,'sizeTable')
-  cleanTable();
+  // cleanTable();
 
 }
 
@@ -335,7 +335,11 @@ function GenerateTable(words,id) {
             row = table.insertRow(-1);
             for (var j = 0; j < columnCount; j++) {
                 var cell = row.insertCell(-1);
-                if (words[i][j] != "undefined"){
+
+                if (j > sizeTable[i][0]){
+                  cell.innerHTML = '';
+                }
+                else if (words[i][j] != "undefined"){
                   cell.innerHTML = words[i][j];
                 }
                 else{
